@@ -15,7 +15,6 @@ if [ -s "$(which nvm)" ]; then
 fi
 
 if [ -s "$(which ng)" ]; then
-    # load ng
     source <(ng completion script)
 fi
 
@@ -23,4 +22,5 @@ alias '?'='gh copilot explain'
 alias '??'='gh copilot suggest -t shell'
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
 export DISPLAY=:0;

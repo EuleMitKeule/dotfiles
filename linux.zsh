@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+WDIR=$(pwd)
+
 HAS_APT=$(which apt)
 
 export NONINTERACTIVE=true
@@ -40,11 +42,22 @@ cp ./eule.omp.json ~/.oh-my-posh/themes/eule.omp.json
 
 echo "Installing linuxbrew..."
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [ "$EUID" -ne 0 ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+echo "Reloading profile..."
+
+source ~/.zshrc
 
 echo "Installing GitHub CLI..."
 
-brew install gh
+# if brew is available
+if [ "$(which brew)" ]; then
+    brew install gh
+else
+    zsh linux/install_gh.zsh
+fi
 
 echo "Reloading profile..."
 
