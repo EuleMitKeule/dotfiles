@@ -37,8 +37,8 @@ oh-my-posh font install Meslo
 
 echo "Installing oh-my-posh theme..."
 
-mkdir -p ~/.oh-my-posh/themes
-cp ./eule.omp.json ~/.oh-my-posh/themes/eule.omp.json
+mkdir -p ~/themes
+cp ./eule.omp.json ~/themes/eule.omp.json
 
 echo "Installing linuxbrew..."
 
