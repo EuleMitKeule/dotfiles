@@ -67,3 +67,8 @@ echo "Installing GitHub Copilot CLI..."
 
 gh extension install github/gh-copilot
 
+if [ "$(which brew)" ]; then
+    brew install zsh-autosuggestions
+fi
+
+source ~/.zshrc

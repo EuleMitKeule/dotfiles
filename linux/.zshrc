@@ -26,3 +26,7 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export DISPLAY=:0;
 bindkey -s '\e[1;5D' '\eb'
 bindkey -s '\e[1;5C' '\ec'
+
+if [ "$(which brew)" ]; then
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
