@@ -24,3 +24,5 @@ alias '??'='gh copilot suggest -t shell'
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 export DISPLAY=:0;
+bindkey -s '\e[1;5D' '\eb'
+bindkey -s '\e[1;5C' '\ec'
